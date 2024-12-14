@@ -1,0 +1,15 @@
+-- Variables
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local camera = workspace.CurrentCamera
+local target = nil
+local isLocked = false
+
+-- Function to find the closest player
+local function getClosestPlayer()
+    local closestDistance = math.huge
+    local closestPlayer = nil
+
+    for _, otherPlayer in pairs(game.Players:GetPlayers()) do
+        if otherPlayer ~= player and otherPlayer.Character and otherPlayer.Character:FindFirstChild("HumanoidRootPart") then
+            local distance = (otherPlayer.Character.HumanoidRootPart.Position - player.Character.Hum
